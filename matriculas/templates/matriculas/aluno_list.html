@@ -11,7 +11,11 @@
   </style>
 </head>
 <body>
-  <h1>SIGE - Lista de Alunos</h1>
+  <h1>SIGE - Lista de Alunos</h1>   <form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <p>Utilizador: <strong>{{ request.user.username }}</strong>
+    <button type="submit">Sair</button></p>
+  </form>
   <table>
     <tr>
       <th>Matrícula</th>
